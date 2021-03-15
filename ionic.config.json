@@ -1,0 +1,7 @@
+{
+  "name": "ricette2021",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
