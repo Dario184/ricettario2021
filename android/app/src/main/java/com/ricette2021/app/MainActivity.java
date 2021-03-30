@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package com.ricette2021.app;
 
 import android.os.Bundle;
 

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">ricette2021</string>
-    <string name="title_activity_main">ricette2021</string>
-    <string name="package_name">io.ionic.starter</string>
-    <string name="custom_url_scheme">io.ionic.starter</string>
+    <string name="app_name">RossoPomodoro</string>
+    <string name="title_activity_main">RossoPomodoro</string>
+    <string name="package_name">com.ricette2021.app</string>
+    <string name="custom_url_scheme">com.ricette2021.app</string>
 </resources>

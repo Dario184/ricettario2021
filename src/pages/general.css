@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+ion-img{
+    margin : 0 auto 1rem auto;
+    height: 25vh;
+    width: 20rem;
+}
+ion-header{
+    box-shadow: none;
+}
+ion-button{
+    --color: #ffffff;
+    --box-shadow: none;
+    --border-radius: 10px;
+}
+.input{
+    --box-shadow: none;
+    --border-radius: 10px;
+}
+.custom-font{
+    font-family: 'Josefin Sans', sans-serif;
+}
+path{
+    stroke : blue;
+}
+
+

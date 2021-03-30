@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "ricette2021",
+  "appId": "com.ricette2021.app",
+  "appName": "RossoPomodoro",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "build",
