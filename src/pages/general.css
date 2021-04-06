@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 ion-img{
-    margin : 0 auto 1rem auto;
+    margin : 0 auto;
     height: 25vh;
     width: 20rem;
 }
@@ -13,6 +12,9 @@ ion-button{
     --color: #ffffff;
     --box-shadow: none;
     --border-radius: 10px;
+}
+ion-fab-button{
+    --box-shadow: none;
 }
 .input{
     --box-shadow: none;

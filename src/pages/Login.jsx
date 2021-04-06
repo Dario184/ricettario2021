@@ -1,10 +1,11 @@
 import { Redirect, Route } from 'react-router-dom';
-import { IonContent,IonRadio, IonHeader, IonPage,IonItemGroup, IonTitle,IonToast,  IonInput, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonItem, IonIcon, IonLabel, IonButton, IonToolbar, IonGrid, IonCol, IonRow,IonImg, IonText } from '@ionic/react';
+import { IonContent,IonRadio, IonHeader,IonLoading, IonPage,IonItemGroup, IonTitle,IonToast,  IonInput, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonItem, IonIcon, IonLabel, IonButton, IonToolbar, IonGrid, IonCol, IonRow,IonImg, IonText } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { ellipse, logoApple, logoFacebook, logoGoogle, square, triangle } from 'ionicons/icons';
 import '@ionic/react/css/core.css';
 import './general.css';
 import {useState,useEffect} from 'react';
+import axios from 'axios';
 
 
 const Access = () =>{
@@ -14,6 +15,7 @@ const Access = () =>{
   const [showToast,setShowToast] = useState(false);
   const [eemail, seteemail] = useState(false);
   const [epassword, setepassword] = useState(false);
+  const [showLoading, setShowLoading] = useState(false);
   const login = () =>{
     seteemail(false);
     setepassword(false);
@@ -22,6 +24,28 @@ const Access = () =>{
     }
     if(!password){
       setepassword(true);
+    }
+    if(!eemail && !epassword){
+      let json = {
+        'mail': email,
+        'password' : password
+      }
+      setShowLoading(true);
+      axios.post('https://poetic-orb-283600.ew.r.appspot.com/login',json).then(response => {
+        if(response.data == 'conf'){
+          setShowLoading(false);
+          setmessage('Devi usare il link di comferma inviato via mail');
+          setShowToast(true);
+        }else{
+          setShowLoading(false);
+          window.localStorage.setItem('jwt', response.data);
+          window.location.assign('/Home');
+        }
+      }, () => {
+        setShowLoading(false);
+        setmessage('Mail o password errati');
+        setShowToast(true);
+      });
     }
   }
   return(
@@ -37,7 +61,7 @@ const Access = () =>{
               <IonCol/>
               <IonCol size-lg="4" size="10">
                   <IonItem lines="none">
-                      <IonImg src="./assets/tmp.svg" alt="immagine non caricata"/>
+                      <IonImg src="./assets/logo.svg" alt="immagine non caricata"/>
                     </IonItem>
                   <IonItemGroup>
                     <IonItem className="input" color="light" lines="none">
@@ -57,15 +81,17 @@ const Access = () =>{
                   <br/>
                   <IonText color="medium" className="custom-font"><small>Non ancora iscritto? <ion-router-link href="/Register">Iscriviti</ion-router-link></small></IonText>
                   <br/>
-                  <br/>
-                  <IonButton expand="block" color="danger" className="custom-font"><ion-icon icon={logoGoogle}/>&nbsp;&nbsp;Accedi con Google</IonButton>
-                  <br/>
-                  <IonButton expand="block" color="tertiary" className="custom-font"><ion-icon icon={logoFacebook}/>&nbsp;&nbsp;Accedi con Facebook</IonButton>
                   <IonToast
                   isOpen={showToast}
                   onDidDismiss={() => setShowToast(false)}
                   message={message}
                   duration={400}
+                  />
+                  <IonLoading
+                    isOpen={showLoading}
+                    onDidDismiss={() => setShowLoading(false)}
+                    message={'Attendere...'}
+                    duration={5000}
                   />
               </IonCol>
               <IonCol/>
