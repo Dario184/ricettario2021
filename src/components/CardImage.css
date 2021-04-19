@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 ion-card{
-    box-shadow: 2px 2px 1px rgba(0,0,0,0.1);
+    box-shadow: none;
     border-radius: 10px;
     width: 100%;
     margin: 5px auto;
+    border: 1px solid rgba(0,0,0,0.1);
 }
 img{
     border-radius: 10px;

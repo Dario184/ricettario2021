@@ -3,13 +3,13 @@ import './CardImage.css';
 
 const Recipebox = (props) => {
     return(
-        <IonCard >
+        <IonCard>
             <IonCardContent>
                 <IonItem lines="none">
                     <IonThumbnail slot="start">
-                        <img src="https://www.giallozafferano.it/images/232-23210/Sacher-senza-glutine_780x520_wm_sp.jpg" />
+                        <img src={props.link || "https://www.giallozafferano.it/images/232-23210/Sacher-senza-glutine_780x520_wm_sp.jpg" }/>
                     </IonThumbnail>
-                    <IonCardTitle className="custom-font">Pollo alle mandorle<IonCardSubtitle>Secondi piatti</IonCardSubtitle></IonCardTitle>
+                    <IonCardTitle className="custom-font">{props.name || "Pollo alle mandorle"}<IonCardSubtitle>{props.category || ""}</IonCardSubtitle></IonCardTitle>
                 </IonItem>
             </IonCardContent>
         </IonCard>

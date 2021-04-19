@@ -4,10 +4,10 @@ import './CardImage.css';
 const CardImage = (props) => {
     return(
         <IonCard >
-            <img src="https://www.giallozafferano.it/images/232-23210/Sacher-senza-glutine_780x520_wm_sp.jpg" />
+            <img src={props.link || "https://www.giallozafferano.it/images/232-23210/Sacher-senza-glutine_780x520_wm_sp.jpg"} />
             <IonCardContent>
-                <IonCardSubtitle className="custom-font">Secondi piatti</IonCardSubtitle>
-                <IonCardTitle className="custom-font">Pollo alle mandorle</IonCardTitle>
+                <IonCardSubtitle className="custom-font">{props.categoria || ""}</IonCardSubtitle>
+                <IonCardTitle className="custom-font">{props.nome || "Pollo alle mandorle"}</IonCardTitle>
             </IonCardContent>
         </IonCard>
     );

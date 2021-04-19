@@ -79,9 +79,8 @@ const Register = () =>{
           'password' : password
         };
         axios.post('https://poetic-orb-283600.ew.r.appspot.com/insert/users', json).then(() => {
-          setmessage('Registrazione avvenuta con successo!!');
-          setShowToast(true);
-        });
+          window.location.assign('/Splash');
+        }, err => console.log(err));
       }
     }
     return(

@@ -4,6 +4,7 @@ import { IonReactRouter } from '@ionic/react-router';
 import Access from './pages/Login';
 import Register from './pages/Register'
 import Home from './pages/Home';
+import Splash from './pages/splash';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -49,6 +50,9 @@ const App= () => (
         </Route>
         <Route exact path="/Home/tab3">
           <Redirect to="/Home"/>
+        </Route>
+        <Route exact path="/Splash">
+          <Splash/>
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>
