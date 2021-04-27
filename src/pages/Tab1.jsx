@@ -21,7 +21,7 @@ const Tab1 = () => {
             <IonText className="custom-font"><strong><h4>I nostri cibi preferiti</h4></strong></IonText>
             <IonText className="custom-font" slot="end"><IonRouterLink href="#"><small>vedi di più-></small></IonRouterLink></IonText>
             </IonItem>
-              <CardImage nome="ciao"/>
+              <CardImage nome="Torta sachertorte di germania"/>
           </IonCol>
           <IonCol></IonCol>
         </IonRow>

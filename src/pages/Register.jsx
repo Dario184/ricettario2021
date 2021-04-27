@@ -131,7 +131,7 @@ const Register = () =>{
                     <br/>
                     <IonButton expand="block" className="custom-font" color="primary" fill="solid" onClick={register}><IonText color="light">Registrati</IonText></IonButton>
                     <br/>
-                    <IonText className="ion-text-center custom-font" color="medium"><small>Già registrato? <ion-router-link href="/Login">Accedi</ion-router-link></small></IonText>
+                    <IonText className="ion-text-center custom-font" color="dark"><small>Già registrato? <ion-router-link href="/Login">Accedi</ion-router-link></small></IonText>
                     <IonToast
                   isOpen={showToast}
                   onDidDismiss={() => setShowToast(false)}

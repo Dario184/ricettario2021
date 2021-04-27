@@ -48,7 +48,7 @@ const Tab3 = () => {
     <IonPage>
       <IonHeader className="ion-no-border">
         <IonToolbar>
-          <IonTitle className="custom-font" color="primary"><strong>Le mie liste</strong></IonTitle>
+          <IonTitle className="custom-font" color="primary"><strong>Ricerca ricette</strong></IonTitle>
         </IonToolbar>
         <IonRow>
         <IonCol/>

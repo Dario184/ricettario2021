@@ -55,7 +55,7 @@ const Access = () =>{
             <IonTitle className="ion-text-center custom-font " color="primary"><strong>Accesso</strong></IonTitle>
           </ion-toolbar>
         </IonHeader>
-        <ion-content>
+        <IonContent>
           <ion-grid>
             <ion-row className="ion-justify-content-center">
               <IonCol/>
@@ -79,7 +79,7 @@ const Access = () =>{
                   <br/>
                   <IonButton expand="block" className="custom-font" color="primary" onClick={login}><IonText color="light">Accedi</IonText></IonButton>
                   <br/>
-                  <IonText color="medium" className="custom-font"><small>Non ancora iscritto? <ion-router-link href="/Register">Iscriviti</ion-router-link></small></IonText>
+                  <IonText color="dark" className="custom-font"><small>Non ancora iscritto? <ion-router-link href="/Register">Iscriviti</ion-router-link></small></IonText>
                   <br/>
                   <IonToast
                   isOpen={showToast}
@@ -97,7 +97,7 @@ const Access = () =>{
               <IonCol/>
             </ion-row>
           </ion-grid>
-        </ion-content>
+        </IonContent>
       </IonPage>
   );
 };
