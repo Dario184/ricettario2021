@@ -6,6 +6,7 @@ ion-img{
     height: 25vh;
     width: 20rem;
     background-color: transparent;
+    border-radius: 20px;
 } 
 ion-header{
     box-shadow: none;
@@ -22,6 +23,10 @@ ion-button{
 ion-fab-button{
     --box-shadow: none;
 }
+ion-tab-bar{
+    border-radius: 20px;
+}
+
 .input{
     --box-shadow: none;
     --border-radius: 10px;
@@ -31,6 +36,11 @@ ion-fab-button{
 }
 h4{
     font-weight: 600;
+}
+.recipe{
+    margin-top: -95px;
+    border-radius: 20px;
+    background-color: white;
 }
 
 

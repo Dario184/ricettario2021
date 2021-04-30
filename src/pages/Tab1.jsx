@@ -7,19 +7,13 @@ const Tab1 = () => {
   const [loading, setShowLoading] = useState(false);
   return (
     <IonPage>
-      <IonHeader className="ion-no-border">
-        <IonToolbar>
-          <IonTitle className="custom-font" color="primary"><strong>Esplora ricette</strong></IonTitle>
-        </IonToolbar>
-      </IonHeader>
       <IonContent>
       <IonGrid>
         <IonRow>
           <IonCol></IonCol>
-          <IonCol size-xl="4" size="10" className="ion-padding">
+          <IonCol size-xl="4" size="12" className="ion-padding">
           <IonItem className="ion-margin-bottom" lines="none">
-            <IonText className="custom-font"><strong><h4>I nostri cibi preferiti</h4></strong></IonText>
-            <IonText className="custom-font" slot="end"><IonRouterLink href="#"><small>vedi di più-></small></IonRouterLink></IonText>
+            <IonText className="custom-font"><strong><h1>I nostri cibi preferiti</h1></strong></IonText>
             </IonItem>
               <CardImage nome="Torta sachertorte di germania"/>
           </IonCol>

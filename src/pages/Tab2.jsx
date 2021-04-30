@@ -9,24 +9,17 @@ const Tab2 = () => {
   const Page = () => {
     if(segment == 'ricette') {
       return(<div>
-        <IonItem lines="none">
-            <IonText className="custom-font"><h4>Le tue ricette</h4></IonText>
-          </IonItem>
           <IonList>
-            <IonItem lines="none">
               <Recipebox/>
-            </IonItem>
+              <Recipebox/>
           </IonList>
       </div>);
     }else{
       return(<div>
-        <IonItem lines="none">
-            <IonText className="custom-font"><h4>Le tue liste</h4></IonText>
-          </IonItem>
           <IonList>
-            <IonItem lines="none">
             <Recipebox/>
-            </IonItem>
+            <Recipebox />
+            <Recipebox />
           </IonList>
       </div>);
     }
@@ -34,12 +27,10 @@ const Tab2 = () => {
   return (
     <IonPage>
       <IonHeader className="ion-no-border">
-        <IonToolbar>
-          <IonTitle className="custom-font" color="primary"><strong>Le mie raccolte</strong></IonTitle>
-        </IonToolbar>
         <IonRow>
         <IonCol/>
           <IonCol size-xl="4" size="12">
+          <IonText className="custom-font"><h1>I tuoi salvati</h1></IonText>
           <IonSegment onIonChange={e => setsegment(e.detail.value)}>
           <IonSegmentButton value="ricette">
             <IonText className="custom-font">Ricette</IonText>
@@ -52,11 +43,11 @@ const Tab2 = () => {
           <IonCol/>
         </IonRow>
       </IonHeader>
-      <IonContent fullscreen>
+      <IonContent >
       <IonGrid>
         <IonRow>
           <IonCol></IonCol>
-          <IonCol size-xl="4" size="12" className="ion-padding-end">
+          <IonCol size-xl="4" size="12" className="ion-padding">
           <Page/>
           </IonCol>
           <IonCol></IonCol>

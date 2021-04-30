@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
 ion-card{
-    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.03);
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
-    width: 100%;
-    margin: 20px auto;
-    border: 1px solid rgba(0,0,0,0.03);
+    border: 1px solid rgba(0,0,0,0.1);
 }
 img{
-    border-radius: 10px;
     width: 100%;
+    border-radius: 10px;
 }

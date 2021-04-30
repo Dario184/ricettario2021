@@ -47,25 +47,21 @@ const Tab3 = () => {
   return (
     <IonPage>
       <IonHeader className="ion-no-border">
-        <IonToolbar>
-          <IonTitle className="custom-font" color="primary"><strong>Ricerca ricette</strong></IonTitle>
-        </IonToolbar>
         <IonRow>
         <IonCol/>
           <IonCol size-xl="4" size="12">
+              <IonText className="custom-font"><h1>Ricerca ricette</h1></IonText>
               <IonSearchbar color="light" placeholder="Ricerca" className="input custom-font" onKeyPress={e => keyhandle(e)} onIonChange={e => setsearch(e.detail.value)}></IonSearchbar>
           </IonCol>
           <IonCol/>
         </IonRow>
       </IonHeader>
-      <IonContent fullscreen>
+      <IonContent>
       <IonGrid>
-        <IonRow>
-          <IonCol></IonCol>
-          <IonCol size-xl="4" size="12" className="ion-padding-end">
+        <IonRow className="ion-justify-content-around">
+          <IonCol size-xl="4" size="12">
             <Navigator/>
           </IonCol>
-          <IonCol></IonCol>
         </IonRow>
         <IonLoading
             isOpen={showLoading}
