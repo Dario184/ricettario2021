@@ -6,9 +6,9 @@ android {
         applicationId "com.ricette2021.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionName '1.0.0.2'
+        versionCode 1
+        versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        versionCode 4
     }
     buildTypes {
         release {

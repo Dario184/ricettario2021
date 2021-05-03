@@ -1,4 +1,4 @@
-import { IonContent, IonHeader,IonList,IonSegment, IonFab,IonFabButton, IonIcon,IonSegmentButton, IonLabel, IonPage, IonTitle,IonButton, IonToolbar, IonCard, IonGrid, IonRow, IonCol, IonText, IonItem } from '@ionic/react';
+import { IonContent,IonThumbnail,IonAvatar, IonHeader,IonList,IonSegment, IonFab,IonFabButton, IonIcon,IonSegmentButton, IonLabel, IonPage, IonTitle,IonButton, IonToolbar, IonCard, IonGrid, IonRow, IonCol, IonText, IonItem } from '@ionic/react';
 import './general.css';
 import {useState,useEffect} from 'react';
 import Recipebox from '../components/Recipebox';
@@ -30,7 +30,12 @@ const Tab2 = () => {
         <IonRow>
         <IonCol/>
           <IonCol size-xl="4" size="12">
+          <IonItem lines="none" className="ion-margin-bottom">
           <IonText className="custom-font"><h1>I tuoi salvati</h1></IonText>
+          <IonThumbnail slot="end">
+              <IonAvatar><img className="avatar" src="https://images.pexels.com/photos/3841338/pexels-photo-3841338.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"></img></IonAvatar>
+            </IonThumbnail>
+          </IonItem>
           <IonSegment onIonChange={e => setsegment(e.detail.value)}>
           <IonSegmentButton value="ricette">
             <IonText className="custom-font">Ricette</IonText>

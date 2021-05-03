@@ -1,4 +1,4 @@
-import { IonContent, IonHeader,IonLoading, IonList,IonItemGroup,IonPage, IonIcon, IonSearchbar, IonTitle,IonButton, IonToolbar, IonCard, IonGrid, IonRow, IonCol, IonText, IonItem } from '@ionic/react';
+import { IonContent, IonThumbnail,IonAvatar,IonHeader,IonLoading, IonList,IonItemGroup,IonPage, IonIcon, IonSearchbar, IonTitle,IonButton, IonToolbar, IonCard, IonGrid, IonRow, IonCol, IonText, IonItem } from '@ionic/react';
 import './general.css';
 import axios from 'axios';
 
@@ -50,7 +50,12 @@ const Tab3 = () => {
         <IonRow>
         <IonCol/>
           <IonCol size-xl="4" size="12">
-              <IonText className="custom-font"><h1>Ricerca ricette</h1></IonText>
+              <IonItem lines="none">
+                <IonText className="custom-font"><h1>Ricerca ricette</h1></IonText>
+                <IonThumbnail slot="end">
+              <IonAvatar><img className="avatar" src="https://images.pexels.com/photos/3841338/pexels-photo-3841338.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"></img></IonAvatar>
+            </IonThumbnail>
+              </IonItem>
               <IonSearchbar color="light" placeholder="Ricerca" className="input custom-font" onKeyPress={e => keyhandle(e)} onIonChange={e => setsearch(e.detail.value)}></IonSearchbar>
           </IonCol>
           <IonCol/>
