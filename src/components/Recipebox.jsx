@@ -2,12 +2,19 @@ import { IonContent, IonHeader,IonImg,IonThumbnail, IonPage, IonTitle, IonToolba
 import './CardImage.css';
 
 const Recipebox = (props) => {
+    const HandleClick = () =>{
+        window.localStorage.setItem("valore",{
+            titolo: props.name,
+            link: props.link
+        });
+        window.location.assign("/Recipe");
+    }
     return(
         <IonCard>
             <IonCardContent>
                 <IonItem lines="none">
                     <IonThumbnail slot="start">
-                        <img src={props.link || "https://www.giallozafferano.it/images/232-23210/Sacher-senza-glutine_780x520_wm_sp.jpg" }/>
+                        <img src={props.image || "https://www.giallozafferano.it/images/232-23210/Sacher-senza-glutine_780x520_wm_sp.jpg" }/>
                     </IonThumbnail>
                     <IonCardTitle className="custom-font">{props.name || "Pollo alle mandorle"}<IonCardSubtitle>{props.category || ""}</IonCardSubtitle></IonCardTitle>
                 </IonItem>

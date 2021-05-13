@@ -6,8 +6,17 @@ import CardImage from '../components/Cardimage';
 const Recipe = () => {
     const [props, setProps] = useState({});
     const [loading, setShowLoading] = useState(false);
+    const Function = () => {
+        console.log(window.localStorage.getItem("valore"));
+        axios.post("https://poetic-orb-283600.ew.r.appspot.com/Handle",{
+            titolo : window.localStorage.getItem("valore").titolo,
+            link : window.localStorage.getItem("valore").link
+        }).then((response) => {
+            console.log(response);
+            });
+    }
     return (
-        <IonPage>
+        <IonPage onLoad={Function}>
             <IonContent>
                 <IonGrid>
                     <IonRow className="ion-justify-content-around">

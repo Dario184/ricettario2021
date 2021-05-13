@@ -29,7 +29,7 @@ const Tab3 = () => {
   let Navigator = () => {
     if(respo!=''){
     return(
-      <IonList>{respo.map(e => <Recipebox link={e.immagine} name={e.titolo} category=""/>)}</IonList>
+      <IonList>{respo.map(e => <Recipebox image={e.immagine} link={e.link} name={e.titolo} category=""/>)}</IonList>
     );
     }else{
       return(

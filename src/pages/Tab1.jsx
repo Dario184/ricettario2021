@@ -14,7 +14,7 @@ const Tab1 = () => {
   }, err => console.log(err));}
   const Component = () =>{
     Function();
-    return(<div>{response.map(i => <CardImage nome={i.titolo} link={i.immagine} />)}</div>);
+    return(<div>{response.map(i => <CardImage link={i.link} nome={i.titolo} image={i.immagine} />)}</div>);
   }
   return (
     <IonPage>
