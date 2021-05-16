@@ -20,6 +20,7 @@ import './general.css';
 
 const Home = () => {
   return (
+      // router per la scelta della pagina da visualizzare nella navbar
       <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>

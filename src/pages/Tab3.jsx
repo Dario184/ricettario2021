@@ -11,6 +11,7 @@ const Tab3 = () => {
   const [respo,setresponse] = useState('');
   const [showLoading, setShowLoading] = useState(false);
   const [search, setsearch] = useState('');
+  // invio delle informazioni e ricerca delle ricette adatte all'utente solo con il tasto invio
   let keyhandle = (e) => {
     if(e.key=='Enter'){
       if(search == '') return;
@@ -26,6 +27,7 @@ const Tab3 = () => {
       });
     }
   }
+  //qui vengono mostrate le ricette se l'utente ha premuto almeno una volta su invio
   let Navigator = () => {
     if(respo!=''){
     return(

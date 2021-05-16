@@ -7,6 +7,7 @@ import { add } from 'ionicons/icons';
 const Tab2 = () => {
   const [segment, setsegment] = useState('');
   const Page = () => {
+      //gestione del segmento che limita le ricette dalle liste
     if(segment == 'ricette') {
       return(<div>
           <IonList>

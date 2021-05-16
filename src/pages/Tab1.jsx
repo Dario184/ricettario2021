@@ -13,11 +13,10 @@ const Tab1 = () => {
     console.log(arr.data);
   }, err => console.log(err));}
   const Component = () =>{
-    Function();
     return(<div>{response.map(i => <CardImage nome={i.titolo} link={i.immagine} />)}</div>);
   }
   return (
-    <IonPage>
+    <IonPage onLoad={Function}>
       <IonContent>
       <IonGrid>
         <IonRow>

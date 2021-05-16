@@ -26,7 +26,7 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
-
+// schema del routing della applicazione
 const App= () => (
   <IonApp>
     <IonReactRouter>
@@ -55,7 +55,7 @@ const App= () => (
         <Route exact path="/Splash">
           <Splash/>
         </Route>
-        <Route exact path="/Recipe">
+        <Route exact path="/Recipe/:recipe">
           <Recipe/>
         </Route>
       </IonRouterOutlet>

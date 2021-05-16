@@ -2,8 +2,11 @@ import { IonContent, IonHeader,IonImg,IonThumbnail, IonPage, IonTitle, IonToolba
 import './CardImage.css';
 
 const Recipebox = (props) => {
+    const Visualize = () => {
+        window.location.assign("/Recipe/"+props.name);
+    }
     return(
-        <IonCard>
+        <IonCard onClick={Visualize}>
             <IonCardContent>
                 <IonItem lines="none">
                     <IonThumbnail slot="start">
