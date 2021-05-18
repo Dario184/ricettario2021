@@ -16,17 +16,12 @@ ion-item{
     --background: transparent;
 }
 ion-button{
-    --color: #ffffff;
     --box-shadow: none;
     --border-radius: 10px;
 }
 /*ombreggiatura tolta dal pulsante volante*/
 ion-fab-button{
     --box-shadow: none;
-}
-/*stile della barra funzionale sotto*/
-ion-tab-bar{
-    border-radius: 20px;
 }
 /* Descrizione dell'avatar del utente*/
 .avatar{
@@ -43,13 +38,16 @@ ion-tab-bar{
 .custom-font{
     font-family: 'Mulish', 'sans-serif';
 }
-h4{
-    font-weight: 600;
-}
 .recipe{
     margin-top: -95px;
     border-radius: 20px;
-    background-color: white;
+    background: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+    .recipe{
+        background: rgb(18,18,18);
+    }
 }
 
 

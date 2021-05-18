@@ -26,7 +26,6 @@ const Recipe = () => {
                 procedimento: response.data.procedimento
         });
         });
-        console.log(props.ingredienti);
     }
     return (
         <IonPage onLoad={Function}>
@@ -58,13 +57,13 @@ const Recipe = () => {
                             <IonButton className="ion-margin-vertical" expand="block" color="primary"><IonText color="light">Salva la ricetta</IonText></IonButton>
                         </IonCol>
                     </IonRow>
-                    <IonLoading
-                        isOpen={setShowLoading}
-                        onDidDismiss={() => setShowLoading(false)}
-                        message={'Attendere...'}
-                        duration={5000}
-                    />
                 </IonGrid>
+                <IonLoading
+                    isOpen={setShowLoading}
+                    onDidDismiss={() => setShowLoading(false)}
+                    message={'Attendere...'}
+                    duration={5000}
+                />
             </IonContent>
         </IonPage>
     );
