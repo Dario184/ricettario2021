@@ -1,6 +1,7 @@
 import { IonContent, IonThumbnail,IonAvatar,IonHeader,IonLoading, IonList,IonItemGroup,IonPage, IonIcon, IonSearchbar, IonTitle,IonButton, IonToolbar, IonCard, IonGrid, IonRow, IonCol, IonText, IonItem } from '@ionic/react';
 import './general.css';
 import axios from 'axios';
+import Popover from "../components/menu";
 
 import {useState,useEffect} from 'react';
 import Recipebox from '../components/Recipebox';
@@ -55,7 +56,7 @@ const Tab3 = () => {
               <IonItem lines="none">
                 <IonText className="custom-font"><h1>Ricerca ricette</h1></IonText>
                 <IonThumbnail slot="end">
-              <IonAvatar><img className="avatar" src="https://images.pexels.com/photos/3841338/pexels-photo-3841338.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"></img></IonAvatar>
+                <Popover/>
             </IonThumbnail>
               </IonItem>
               <IonSearchbar color="light" placeholder="Ricerca" className="input custom-font" onKeyPress={e => keyhandle(e)} onIonChange={e => setsearch(e.detail.value)}></IonSearchbar>

@@ -1,6 +1,7 @@
-import { IonContent, IonButton, IonLoading,IonCardTitle ,IonLabel, IonImg, IonItemGroup, IonList, IonText, IonGrid, IonCol, IonThumbnail, IonRow, IonItem, IonRouterLink, IonHeader, IonPage, IonSlides, IonSlide, IonTitle, IonToolbar, IonCard, IonCardContent, IonCardSubtitle } from '@ionic/react';
+import { IonContent,IonIcon, IonButton, IonLoading,IonCardTitle ,IonLabel, IonImg, IonItemGroup, IonList, IonText, IonGrid, IonCol, IonThumbnail, IonRow, IonItem, IonRouterLink, IonHeader, IonPage, IonSlides, IonSlide, IonTitle, IonToolbar, IonCard, IonCardContent, IonCardSubtitle } from '@ionic/react';
 import './general.css';
 import axios from 'axios';
+import {close} from "ionicons/icons";
 import { useState, useEffect } from 'react';
 import CardImage from '../components/Cardimage';
 const Recipe = () => {
@@ -14,6 +15,7 @@ const Recipe = () => {
             "titolo" : titolo,
             "link" : link
         }).then((response) => {
+            if(response.data==null || response.data=={}) window.location.assign("/Home");
             setProps({
                 link : response.data.immagine,
                 title : response.data.titolo,
@@ -21,11 +23,15 @@ const Recipe = () => {
                 difficoltà : response.data.difficoltà,
                 preparazione : response.data.preparazione,
                 cottura : response.data.cottura,
-                descrizione: response.data.descrizione,
+                descrizione: response.data.descrizione.replace(/&nbsp;/g,''),
                 dosi : response.data.dosi,
-                procedimento: response.data.procedimento
+                procedimento: response.data.procedimento.join(' ').replace(/&nbsp;/g,'')
+        }
+        );
         });
-        });
+    }
+    const Location = () => {
+        window.location.assign('/Home');
     }
     return (
         <IonPage onLoad={Function}>
@@ -33,23 +39,26 @@ const Recipe = () => {
                 <IonGrid>
                     <IonRow className="ion-justify-content-around">
                         <IonCol size-xl="4" size="12" className="ion-margin-none">
-                            <img src={props.link || "http://www.perdersiaroma.it/wp-content/uploads/2018/03/b.jpg"} className="ion-margin-none " />
+                            <img src={props.link || "http://www.perdersiaroma.it/wp-content/uploads/2018/03/b.jpg"} className="ion-margin-none img" />
                         </IonCol>
                     </IonRow>
                     <IonRow className="ion-justify-content-around">
                         <IonCol size-xl="4" size="12" className="recipe ion-padding">
-                            <IonText className="custom-font"><strong><h1>{props.title || "Sachertorte"}</h1></strong></IonText>
+                            <IonItem lines={"none"} className={"ion-no-padding"}>
+                                <IonText className="custom-font"><strong><h1>{props.title || "Sachertorte"}</h1></strong></IonText>
+                                <IonIcon slot={"end"} className={"close"} icon={close} onClick={Location}></IonIcon>
+                            </IonItem>
                             <IonText className="custom-font ion-margin-bottom">{props.descrizione || "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam minima consectetur hic atque corporis rem? Quae nostrum, quasi iusto atque eum, voluptatibus dignissimos, a neque ea rerum pariatur quia earum!"} </IonText>
                             <IonCard className="ion-margin-bottom"> 
                                 <IonCardContent>
                                     <IonCardTitle className="custom-font ion-margin-bottom">Informazioni </IonCardTitle>
-                                    <IonText className="custom-font"><p>- Ingredienti:</p>
+                                    <IonText className="custom-font"><p>-<strong>Ingredienti</strong>:</p>
                                         {props.ingredienti!=null? props.ingredienti.map(i=><li>{i}</li>) : "ciao"}
                                     </IonText>
-                                    <IonText className="custom-font"><p>-Difficoltà: {props.difficoltà || "Difficile"}</p></IonText>
-                                    <IonText className="custom-font"><p>-Tempo di preparazione: {props.preparazione || "30 min"}</p></IonText>
-                                    <IonText  className="custom-font"><p>-Tempo di cottura: {props.cottura || "20 min"}</p></IonText>
-                                    <IonText className="custom-font "><p>-Dosi: {props.dosi || "2"}</p></IonText>
+                                    <IonText className="custom-font"><p>-<strong>Difficoltà</strong>: {props.difficoltà || "Difficile"}</p></IonText>
+                                    <IonText className="custom-font"><p>-<strong>Tempo di preparazione</strong>: {props.preparazione || "30 min"}</p></IonText>
+                                    <IonText  className="custom-font"><p>-<strong>Tempo di cottura</strong>: {props.cottura || "20 min"}</p></IonText>
+                                    <IonText className="custom-font "><p>-<strong>Dosi</strong>: {props.dosi || "2"}</p></IonText>
                                 </IonCardContent>
                             </IonCard>
                             <IonText className="custom-font"><h1>Procedimento</h1></IonText>

@@ -7,7 +7,11 @@ ion-img{
     width: 20rem;
     background-color: transparent;
     border-radius: 20px;
-} 
+
+}
+.img{
+    z-index: 1;
+}
 ion-header{
     box-shadow: none;
     border-radius: 20px;
@@ -34,7 +38,7 @@ ion-fab-button{
     --box-shadow: none;
     --border-radius: 10px;
 }
-/*caricamento del font montserrat*/
+/*caricamento del font mulish*/
 .custom-font{
     font-family: 'Mulish', 'sans-serif';
 }
@@ -42,6 +46,10 @@ ion-fab-button{
     margin-top: -95px;
     border-radius: 20px;
     background: #ffffff;
+}
+.close{
+    z-index: 0;
+    color: #F56662;
 }
 
 @media (prefers-color-scheme: dark) {

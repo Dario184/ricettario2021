@@ -1,5 +1,6 @@
 import { IonContent,IonLoading,IonAvatar,IonLabel,IonImg,IonItemGroup, IonList ,IonText,IonGrid, IonCol,IonThumbnail, IonRow,IonItem,IonRouterLink, IonHeader, IonPage, IonSlides, IonSlide, IonTitle, IonToolbar } from '@ionic/react';
 import './general.css';
+import Popover from '../components/menu';
 import axios from 'axios';
 import {useState,useEffect} from 'react';
 import CardImage from '../components/Cardimage';
@@ -24,7 +25,7 @@ const Tab1 = () => {
           <IonCol size-xl="4" size="12" className="ion-padding">
           <IonItem className="ion-margin-bottom" lines="none">
             <IonThumbnail slot="end">
-              <IonAvatar><img className="avatar" src="https://images.pexels.com/photos/3841338/pexels-photo-3841338.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"></img></IonAvatar>
+              <Popover/>
             </IonThumbnail>
             <IonText className="custom-font"><strong><h1>I nostri cibi preferiti</h1></strong></IonText>
           </IonItem>

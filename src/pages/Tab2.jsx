@@ -3,6 +3,7 @@ import './general.css';
 import {useState,useEffect} from 'react';
 import Recipebox from '../components/Recipebox';
 import { add } from 'ionicons/icons';
+import Popover from "../components/menu";
 
 const Tab2 = () => {
   const [segment, setsegment] = useState('');
@@ -34,7 +35,7 @@ const Tab2 = () => {
           <IonItem lines="none" className="ion-margin-bottom">
           <IonText className="custom-font"><h1>I tuoi salvati</h1></IonText>
           <IonThumbnail slot="end">
-              <IonAvatar><img className="avatar" src="https://images.pexels.com/photos/3841338/pexels-photo-3841338.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"></img></IonAvatar>
+              <Popover/>
             </IonThumbnail>
           </IonItem>
           <IonSegment onIonChange={e => setsegment(e.detail.value)}>
