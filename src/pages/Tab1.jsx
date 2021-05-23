@@ -7,11 +7,30 @@ import CardImage from '../components/Cardimage';
 const Tab1 = () => {
   const [loading, setShowLoading] = useState(false);
   const [response, setResponse] = useState([]);
+  function GetCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
   const Function = () => {
     if (response != '') return;
-    axios.get("https://poetic-orb-283600.ew.r.appspot.com/explore").then(arr => {
+    axios.get("https://poetic-orb-283600.ew.r.appspot.com/explore",{
+      headers : {
+        'auth-token' : GetCookie("jwt")
+      }
+    }).then(arr => {
     setResponse(arr.data);  
-    console.log(arr.data);
+    console.log(arr.data,GetCookie("jwt"));
   }, err => console.log(err));}
   const Component = () =>{
     return(<div>{response.map(i => <CardImage nome={i.titolo} link={i.immagine} />)}</div>);

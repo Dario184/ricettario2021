@@ -38,7 +38,7 @@ const Access = () =>{
           setShowToast(true);
         }else{
           setShowLoading(false);
-          window.localStorage.setItem('jwt', response.data);
+          document.cookie = "jwt=" + response.data;
           window.location.assign('/Home');
         }
       }, () => {
