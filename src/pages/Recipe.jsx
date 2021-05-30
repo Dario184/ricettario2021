@@ -7,6 +7,21 @@ import CardImage from '../components/Cardimage';
 const Recipe = () => {
     const [props, setProps] = useState({});
     const [loading, setShowLoading] = useState(false);
+    function GetCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
     const Function = () => {
         let titolo = window.location.href.trim().split('/').pop().replaceAll('%20',' ');
         let link = titolo.replaceAll(' ','-').replaceAll('\'','-')+'.html';
@@ -14,6 +29,10 @@ const Recipe = () => {
         axios.post('https://poetic-orb-283600.ew.r.appspot.com/Handle',{
             "titolo" : titolo,
             "link" : link
+        },{
+            headers : {
+                'auth-token' : GetCookie("jwt")
+            }
         }).then((response) => {
             if(response.data==null || response.data=={}) window.location.assign("/Home");
             setProps({
@@ -45,15 +64,15 @@ const Recipe = () => {
                     <IonRow className="ion-justify-content-around">
                         <IonCol size-xl="4" size="12" className="recipe ion-padding">
                             <IonItem lines={"none"} className={"ion-no-padding"}>
-                                <IonText className="custom-font"><strong><h1>{props.title || "Sachertorte"}</h1></strong></IonText>
+                                <IonText className="custom-font"><strong><h1>{props.title || ""}</h1></strong></IonText>
                                 <IonIcon slot={"end"} className={"close"} icon={close} onClick={Location}></IonIcon>
                             </IonItem>
-                            <IonText className="custom-font ion-margin-bottom">{props.descrizione || "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam minima consectetur hic atque corporis rem? Quae nostrum, quasi iusto atque eum, voluptatibus dignissimos, a neque ea rerum pariatur quia earum!"} </IonText>
+                            <IonText className="custom-font ion-margin-bottom">{props.descrizione || ""} </IonText>
                             <IonCard className="ion-margin-bottom"> 
                                 <IonCardContent>
                                     <IonCardTitle className="custom-font ion-margin-bottom">Informazioni </IonCardTitle>
                                     <IonText className="custom-font"><p>-<strong>Ingredienti</strong>:</p>
-                                        {props.ingredienti!=null? props.ingredienti.map(i=><li>{i}</li>) : "ciao"}
+                                        {props.ingredienti!=null? props.ingredienti.map(i=><li>{i}</li>) : ""}
                                     </IonText>
                                     <IonText className="custom-font"><p>-<strong>Difficoltà</strong>: {props.difficoltà || "Difficile"}</p></IonText>
                                     <IonText className="custom-font"><p>-<strong>Tempo di preparazione</strong>: {props.preparazione || "30 min"}</p></IonText>
@@ -62,7 +81,7 @@ const Recipe = () => {
                                 </IonCardContent>
                             </IonCard>
                             <IonText className="custom-font"><h1>Procedimento</h1></IonText>
-                            <IonText className="custom-font">{props.procedimento || "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto nihil error ullam amet accusantium sed, ut atque saepe perspiciatis similique corrupti, repudiandae reprehenderit eum cumque sit voluptatibus, ab distinctio possimus." } </IonText>
+                            <IonText className="custom-font">{props.procedimento || "" } </IonText>
                             <IonButton className="ion-margin-vertical" expand="block" color="primary"><IonText color="light">Salva la ricetta</IonText></IonButton>
                         </IonCol>
                     </IonRow>

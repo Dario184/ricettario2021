@@ -38,7 +38,10 @@ const Access = () =>{
           setShowToast(true);
         }else{
           setShowLoading(false);
-          document.cookie = "jwt=" + response.data;
+          document.cookie = "jwt=" + response.data.token;
+          document.cookie = "user=" + response.data.user;
+          document.cookie = "immagine=" + response.data.immagine;
+          console.log('autenticato');
           window.location.assign('/Home');
         }
       }, () => {
