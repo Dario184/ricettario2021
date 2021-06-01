@@ -9,6 +9,21 @@ import { chevronForward } from 'ionicons/icons';
 
 
 const Tab3 = () => {
+  function GetCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
   const [respo,setresponse] = useState('');
   const [showLoading, setShowLoading] = useState(false);
   const [search, setsearch] = useState('');
@@ -18,7 +33,11 @@ const Tab3 = () => {
       if(search == '') return;
       console.log(search);
       setShowLoading(true);
-      axios.get("https://poetic-orb-283600.ew.r.appspot.com/search/"+search).then(response => {
+      axios.get("https://poetic-orb-283600.ew.r.appspot.com/search/"+search,{
+        headers : {
+          'auth-token' : GetCookie("jwt")
+        }
+      }).then(response => {
         setShowLoading(false);
         setresponse(response.data);
         console.log(response.data);

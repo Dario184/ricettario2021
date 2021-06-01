@@ -30,7 +30,6 @@ const Tab1 = () => {
       }
     }).then(arr => {
     setResponse(arr.data);
-    console.log(arr,GetCookie("jwt"));
   }, err => console.log(err));}
   const Component = () =>{
     return(<div>{response.map(i => <CardImage nome={i.titolo} link={i.immagine} />)}</div>);
