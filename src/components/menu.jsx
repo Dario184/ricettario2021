@@ -33,8 +33,7 @@ function deleteall(){
 const PopoverList = ({ onHide ,nome}) => (
     <IonList>
         <IonItem lines={"none"} className={"custom-font"}><strong>{nome}</strong></IonItem>
-        <IonItem lines="none" className={"custom-font"} button>Il tuo profilo</IonItem>
-        <IonItem lines="none" className={"custom-font"} button>Notizie</IonItem>
+        <IonItem lines="none" href="/Notion" className={"custom-font"} button>Notizie</IonItem>
         <IonItem lines="none" className={"custom-font"} button onClick={deleteall}>Disconnetiti</IonItem>
     </IonList>
 );

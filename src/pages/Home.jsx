@@ -36,6 +36,9 @@ const Home = () => {
           <Route exact path="/Home">
             <Redirect to="/Home/tab1" />
           </Route>
+          <Route exact path="/list">
+            <Redirect to="/Home/tab2" />
+          </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
           <IonTabButton tab="tab1" href="/Home/tab1">

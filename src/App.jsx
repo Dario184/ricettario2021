@@ -6,6 +6,8 @@ import Register from './pages/Register'
 import Home from './pages/Home';
 import Splash from './pages/splash';
 import Recipe from './pages/Recipe';
+import Notion from './pages/Notion';
+
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -62,6 +64,9 @@ const App = () => {
                 </Route>
                 <Route exact path="/Recipe/:recipe">
                   <Recipe/>
+                </Route>
+                <Route exact path="/Notion">
+                  <Notion/>
                 </Route>
               </IonRouterOutlet>
             </IonReactRouter>

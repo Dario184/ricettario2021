@@ -83,7 +83,8 @@ const Access = () =>{
                   <IonButton expand="block" className="custom-font" color="primary" onClick={login}><IonText color="light">Accedi</IonText></IonButton>
                   <br/>
                   <IonText color="dark" className="custom-font"><small>Non ancora iscritto? <ion-router-link href="/Register">Iscriviti</ion-router-link></small></IonText>
-                  <br/>
+                  <br/><br/><br/><br/>
+                  <IonText color="medium" className="custom-font"><h5>Prodotto ad uso scolastico regolamentato da politiche di fair use</h5></IonText>
                   <IonToast
                   isOpen={showToast}
                   onDidDismiss={() => setShowToast(false)}

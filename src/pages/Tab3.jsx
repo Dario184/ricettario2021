@@ -60,7 +60,16 @@ const Tab3 = () => {
         <IonText className="custom-font"><h4>Categorie ricette</h4></IonText>
         </IonItem>
         <IonList>
-        <IonItem lines="none" className="custom-font">Primi piatti<IonIcon slot="end" icon={chevronForward}/></IonItem>
+        <IonItem lines="none" className="custom-font">Primi piatti</IonItem>
+        <Recipebox link="https://www.giallozafferano.it/images/229-22941/Lasagne-alla-Bolognese_450x300.jpg" name="Lasagne alla Bolognese" category=""/>
+        <Recipebox link="https://www.giallozafferano.it/images/174-17481/Risotto-allo-Zafferano_450x300.jpg" name="Risotto allo Zafferano" category=""/>
+        <Recipebox link="https://www.giallozafferano.it/images/230-23062/Ravioli-cinesi-al-vapore_450x300.jpg" name="Ravioli cinesi al vapore" category=""/>
+        <IonItem lines="none" className="custom-font">Secondi piatti</IonItem>
+        <Recipebox link="https://www.giallozafferano.it/images/174-17464/Parmigiana-di-melanzane_450x300.jpg" name="Parmigiana di melanzane" category=""/>
+        <Recipebox link="https://www.giallozafferano.it/images/166-16604/Polpette-al-sugo_450x300.jpg" name="Polpette al sugo" category=""/>
+        <IonItem lines="none" className="custom-font">Dolci</IonItem>
+        <Recipebox link="https://www.giallozafferano.it/images/207-20759/Macarons_450x300.jpg" name="Macarons" category=""/>
+        <Recipebox link="https://www.giallozafferano.it/images/179-17923/Sacher-torte_450x300.jpg" name="Sachertorte" category=""/>
         </IonList>
       </IonList>
       );
